@@ -10,18 +10,30 @@ echo "Installing nvm..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh)"
 
 echo "Installing services..."
-brew install mysql postgresql cask
+brew install mysql postgresql cask cmake p7zip
 brew services start mysql
 brew services start postgresql
 
 echo "Installing applications..."
-brew cask install tableplus google-chrome iterm2 vlc visual-studio-code lastpass discord expressvpn
+brew cask install tableplus google-chrome iterm2 vlc visual-studio-code lastpass discord expressvpn qbittorrent skype visual-studio dotnet-sdk
 
 echo "Creating ~/.zshrc..."
 cat <<'EOF' > $HOME/.zshrc
 plugins=(git brew)
 
-alias dt='cd $HOME/Desktop'
+alias dt="cd $HOME/Desktop"
+alias op() {
+    printf 'Select a project name:\n'; ls $HOME/Code
+    printf '> '; read dir
+
+    if [ "$1" = "c" ]; then
+        code .
+    elif [ "$1" = "g" ]; then
+        cd $HOME/Code/$dir && git status
+    else
+        cd $HOME/Code/$dir && ls -a
+    fi
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -39,7 +51,7 @@ npm install -g nodemon
 echo "Updating settings..."
 # Sleep display after 1 hour
 sudo pmset -a displaysleep 60
-#User settings for Visual Studio Code
+# User settings for Visual Studio Code
 cat <<'EOF' > $HOME/Library/Application\ Support/Code/User/settings.json
 {
     "workbench.startupEditor": "newUntitledFile",
@@ -49,3 +61,6 @@ cat <<'EOF' > $HOME/Library/Application\ Support/Code/User/settings.json
     "editor.minimap.enabled": false
 }
 EOF
+
+echo "Finishing miscellaneous tasks..."
+mkdir $HOME/Code
