@@ -10,17 +10,18 @@ echo "Installing nvm..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh)"
 
 echo "Installing services..."
-brew install mysql postgresql cask cmake p7zip
-brew services start mysql
+brew install postgresql cask cmake p7zip
 brew services start postgresql
 
 echo "Installing applications..."
-brew cask install tableplus google-chrome iterm2 vlc visual-studio-code lastpass discord expressvpn qbittorrent skype visual-studio dotnet-sdk
+brew cask install tableplus iterm2 vlc visual-studio-code lastpass expressvpn qbittorrent visual-studio dotnet-sdk zoomus postman
+brew reinstall openssl@1.1
 
 echo "Creating ~/.zshrc..."
 cat <<'EOF' > $HOME/.zshrc
 plugins=(git brew)
 
+alias publish="dotnet publish /p:NativeCodeGen=cpp -c Release -r osx-x64"
 alias dt="cd $HOME/Desktop"
 alias op() {
     printf 'Select a project name:\n'; ls $HOME/Code
@@ -34,6 +35,11 @@ alias op() {
         cd $HOME/Code/$dir && ls -a
     fi
 }
+
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -49,8 +55,6 @@ nvm install --lts
 npm install -g nodemon
 
 echo "Updating settings..."
-# Sleep display after 1 hour
-sudo pmset -a displaysleep 60
 # User settings for Visual Studio Code
 cat <<'EOF' > $HOME/Library/Application\ Support/Code/User/settings.json
 {

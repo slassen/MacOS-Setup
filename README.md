@@ -10,7 +10,7 @@ zsh <(curl -s https://raw.githubusercontent.com/slassen/MacOS-Setup/master/setup
         - Drift, start after 10 minutes, show with clock
         - Hot Corners, bottom left -> Lock Screen
     - Security & Privacy
-        - Require password *1 hour* after sleep or screen saver begins
+        - Require password *immediately* after sleep or screen saver begins
 - ExpressVPN preferences 
     - Shortcuts -> ☐ Show shortcuts after VPN connects
     - Advanced -> Show ExpressVPN icon in {Menu Bar only}
@@ -29,3 +29,6 @@ zsh <(curl -s https://raw.githubusercontent.com/slassen/MacOS-Setup/master/setup
     - Install wireless [mouse driver](https://support.logi.com/hc/en-us/articles/360024698534--Downloads-MX-Vertical-Advanced-Ergonomic-Mouse)
     - Install Xcode IDE
     - Set `.sh` files to open with VS Code
+    - iTerm2 -> iTerm2 -> "Make iTerm2 Default Term"
+- XCode IDE
+    - Editor -> ☐ Minimap
