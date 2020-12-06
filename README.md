@@ -7,7 +7,7 @@ zsh <(curl -s https://raw.githubusercontent.com/slassen/MacOS-Setup/master/setup
 ### **Manual Tasks**
 - System Preferences
     - Desktop & Screensaver
-        - Drift, start after 10 minutes, show with clock
+        - Arabesque, start after 10 minutes, show with clock
         - Hot Corners, bottom left -> Lock Screen
     - Security & Privacy
         - Require password *immediately* after sleep or screen saver begins

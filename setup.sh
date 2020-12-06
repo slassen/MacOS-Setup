@@ -14,8 +14,7 @@ brew install postgresql cask cmake p7zip
 brew services start postgresql
 
 echo "Installing applications..."
-brew cask install tableplus iterm2 vlc visual-studio-code lastpass expressvpn qbittorrent visual-studio dotnet-sdk zoomus postman
-brew reinstall openssl@1.1
+brew cask install tableplus iterm2 vlc visual-studio-code lastpass expressvpn qbittorrent zoomus postman arduino
 
 echo "Creating ~/.zshrc..."
 cat <<'EOF' > $HOME/.zshrc
@@ -35,11 +34,6 @@ alias op() {
         cd $HOME/Code/$dir && ls -a
     fi
 }
-
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
