@@ -14,7 +14,7 @@ brew install postgresql cask cmake p7zip
 brew services start postgresql
 
 echo "Installing applications..."
-brew cask install tableplus iterm2 vlc visual-studio-code lastpass expressvpn qbittorrent zoomus postman arduino
+brew cask install tableplus iterm2 vlc visual-studio-code lastpass expressvpn qbittorrent zoom postman
 
 echo "Creating ~/.zshrc..."
 cat <<'EOF' > $HOME/.zshrc
