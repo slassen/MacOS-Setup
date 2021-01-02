@@ -46,7 +46,7 @@ source $HOME/.zshrc
 
 echo "Installing Node LTS"
 nvm install --lts
-npm install -g nodemon
+npm install -g nodemon eslint
 
 echo "Updating settings..."
 # User settings for Visual Studio Code
@@ -61,4 +61,8 @@ cat <<'EOF' > $HOME/Library/Application\ Support/Code/User/settings.json
 EOF
 
 echo "Finishing miscellaneous tasks..."
+code --install-extension wix.vscode-import-cost
+code --install-extension 2gua.rainbow-brackets
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension formulahendry.auto-close-tag
 mkdir $HOME/Code
