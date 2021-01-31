@@ -64,6 +64,10 @@ cat <<'EOF' > $HOME/Library/Application\ Support/Code/User/settings.json
 }
 EOF
 
+echo "Downloading Wireless Mouse Driver..."
+curl --show-error -L https://download01.logi.com/web/ftp/pub/techsupport/keyboards/FirmwareUpdateToolInstaller.zip | tar -xf - 
+unzip ./FirmwareUpdateTool/FirmwareUpdateTool.zip && mv FirmwareUpdateTool.app $HOME/Downloads/Wireless\ Mouse\ Setup.app && rm -rf FirmwareUpdateTool
+
 echo "Finishing miscellaneous tasks..."
 code --install-extension wix.vscode-import-cost
 code --install-extension 2gua.rainbow-brackets

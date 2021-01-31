@@ -34,7 +34,7 @@ zsh <(curl -s https://raw.githubusercontent.com/slassen/MacOS-Setup/master/setup
     - ⌘⇧P -> Shell Command: Install 'code' command in PATH
 - Miscellaneous
     - Install "Open In Code" quick action. `open -n -b "com.microsoft.VSCode" --args "$*" # Run Shell Script`
-    - Install wireless [mouse driver](https://support.logi.com/hc/en-us/articles/360024698534--Downloads-MX-Vertical-Advanced-Ergonomic-Mouse)
+    - Run "Wireless Mouse Setup" downloaded to Downloads folder
     - Install Xcode IDE
     - Set `.sh` files to open with VS Code
     - iTerm2 -> iTerm2 -> "Make iTerm2 Default Term"
