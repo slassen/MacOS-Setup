@@ -56,7 +56,11 @@ cat <<'EOF' > $HOME/Library/Application\ Support/Code/User/settings.json
     "terminal.integrated.shell.osx": "/bin/zsh",
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "all",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2
 }
 EOF
 

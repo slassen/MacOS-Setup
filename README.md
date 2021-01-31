@@ -11,6 +11,14 @@ zsh <(curl -s https://raw.githubusercontent.com/slassen/MacOS-Setup/master/setup
         - Hot Corners, bottom left -> Lock Screen
     - Security & Privacy
         - Require password *immediately* after sleep or screen saver begins
+    - Energy Saver
+        - ☐ Wake for network access
+        - ☐ Enable Power Nap
+    - Bluetooth
+        - ☐ Open Bluetooth Setup Assistant at startup if no keyboard
+        - ☐ Open Bluetooth Setup Assistant at startup if no mouse
+    - Dock
+        - Position on screen -> Left
 - ExpressVPN preferences 
     - Shortcuts -> ☐ Show shortcuts after VPN connects
     - Advanced -> Show ExpressVPN icon in {Menu Bar only}
