@@ -7,10 +7,10 @@ echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "Installing nvm..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 echo "Installing services..."
-brew install postgresql cask cmake p7zip
+brew install postgresql cask cmake p7zip discord
 brew services start postgresql
 
 echo "Installing applications..."
@@ -23,15 +23,12 @@ plugins=(git brew)
 alias publish="dotnet publish /p:NativeCodeGen=cpp -c Release -r osx-x64"
 alias dt="cd $HOME/Desktop"
 alias op() {
-    printf 'Select a project name:\n'; ls $HOME/Code
-    printf '> '; read dir
-
-    if [ "$1" = "c" ]; then
-        code .
-    elif [ "$1" = "g" ]; then
-        cd $HOME/Code/$dir && git status
+    if [ "$1" = "" ]; then
+        cd $HOME/Code && ls
     else
-        cd $HOME/Code/$dir && ls -a
+        ls $HOME/Code
+        printf 'Select a project name> '; read dir
+        cd $HOME/Code/$dir && $@
     fi
 }
 
@@ -46,6 +43,9 @@ source $HOME/.zshrc
 
 echo "Installing Node LTS"
 nvm install --lts
+bash | nvm install --lts
+nvm alias default 14
+nvm use 14
 npm install -g nodemon eslint
 
 echo "Updating settings..."
@@ -73,4 +73,5 @@ code --install-extension wix.vscode-import-cost
 code --install-extension 2gua.rainbow-brackets
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension formulahendry.auto-close-tag
+code --install-extension oouo-diogo-perdigao.docthis
 mkdir $HOME/Code

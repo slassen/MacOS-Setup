@@ -19,6 +19,11 @@ zsh <(curl -s https://raw.githubusercontent.com/slassen/MacOS-Setup/master/setup
         - ☐ Open Bluetooth Setup Assistant at startup if no mouse
     - Dock
         - Position on screen -> Left
+    - Notifications
+        - Do Not Disturb
+            - ☑ When the display is sleeping
+            - ☑ When the screen is locked
+            - ☑ When mirroring to TVs and projectors
 - ExpressVPN preferences 
     - Shortcuts -> ☐ Show shortcuts after VPN connects
     - Advanced -> Show ExpressVPN icon in {Menu Bar only}
